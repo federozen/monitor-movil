@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: monitor-deportivo
+    env: python
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: uvicorn app_render:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
